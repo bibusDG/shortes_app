@@ -21,6 +21,10 @@ mixin _$MainPageState {
     required TResult Function() initial,
     required TResult Function(String message) lackOfNotes,
     required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +32,10 @@ mixin _$MainPageState {
     TResult? Function()? initial,
     TResult? Function(String message)? lackOfNotes,
     TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +43,10 @@ mixin _$MainPageState {
     TResult Function()? initial,
     TResult Function(String message)? lackOfNotes,
     TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +55,10 @@ mixin _$MainPageState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LackOfNotes value) lackOfNotes,
     required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +66,10 @@ mixin _$MainPageState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LackOfNotes value)? lackOfNotes,
     TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +77,10 @@ mixin _$MainPageState {
     TResult Function(_Initial value)? initial,
     TResult Function(_LackOfNotes value)? lackOfNotes,
     TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,6 +151,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function(String message) lackOfNotes,
     required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
   }) {
     return initial();
   }
@@ -137,6 +165,10 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function(String message)? lackOfNotes,
     TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
   }) {
     return initial?.call();
   }
@@ -147,6 +179,10 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function(String message)? lackOfNotes,
     TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -161,6 +197,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LackOfNotes value) lackOfNotes,
     required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
   }) {
     return initial(this);
   }
@@ -171,6 +211,10 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LackOfNotes value)? lackOfNotes,
     TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
   }) {
     return initial?.call(this);
   }
@@ -181,6 +225,10 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_LackOfNotes value)? lackOfNotes,
     TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -265,6 +313,10 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     required TResult Function() initial,
     required TResult Function(String message) lackOfNotes,
     required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
   }) {
     return lackOfNotes(message);
   }
@@ -275,6 +327,10 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult? Function()? initial,
     TResult? Function(String message)? lackOfNotes,
     TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
   }) {
     return lackOfNotes?.call(message);
   }
@@ -285,6 +341,10 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult Function()? initial,
     TResult Function(String message)? lackOfNotes,
     TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
     required TResult orElse(),
   }) {
     if (lackOfNotes != null) {
@@ -299,6 +359,10 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LackOfNotes value) lackOfNotes,
     required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
   }) {
     return lackOfNotes(this);
   }
@@ -309,6 +373,10 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LackOfNotes value)? lackOfNotes,
     TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
   }) {
     return lackOfNotes?.call(this);
   }
@@ -319,6 +387,10 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult Function(_Initial value)? initial,
     TResult Function(_LackOfNotes value)? lackOfNotes,
     TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
     required TResult orElse(),
   }) {
     if (lackOfNotes != null) {
@@ -420,6 +492,10 @@ class _$NotesImpl implements _Notes {
     required TResult Function() initial,
     required TResult Function(String message) lackOfNotes,
     required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
   }) {
     return notes(userNotes);
   }
@@ -430,6 +506,10 @@ class _$NotesImpl implements _Notes {
     TResult? Function()? initial,
     TResult? Function(String message)? lackOfNotes,
     TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
   }) {
     return notes?.call(userNotes);
   }
@@ -440,6 +520,10 @@ class _$NotesImpl implements _Notes {
     TResult Function()? initial,
     TResult Function(String message)? lackOfNotes,
     TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
     required TResult orElse(),
   }) {
     if (notes != null) {
@@ -454,6 +538,10 @@ class _$NotesImpl implements _Notes {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LackOfNotes value) lackOfNotes,
     required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
   }) {
     return notes(this);
   }
@@ -464,6 +552,10 @@ class _$NotesImpl implements _Notes {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LackOfNotes value)? lackOfNotes,
     TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
   }) {
     return notes?.call(this);
   }
@@ -474,6 +566,10 @@ class _$NotesImpl implements _Notes {
     TResult Function(_Initial value)? initial,
     TResult Function(_LackOfNotes value)? lackOfNotes,
     TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
     required TResult orElse(),
   }) {
     if (notes != null) {
@@ -493,4 +589,546 @@ abstract class _Notes implements MainPageState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotesImplCopyWith<_$NotesImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CreatingNoteImplCopyWith<$Res> {
+  factory _$$CreatingNoteImplCopyWith(
+          _$CreatingNoteImpl value, $Res Function(_$CreatingNoteImpl) then) =
+      __$$CreatingNoteImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CreatingNoteImplCopyWithImpl<$Res>
+    extends _$MainPageStateCopyWithImpl<$Res, _$CreatingNoteImpl>
+    implements _$$CreatingNoteImplCopyWith<$Res> {
+  __$$CreatingNoteImplCopyWithImpl(
+      _$CreatingNoteImpl _value, $Res Function(_$CreatingNoteImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MainPageState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CreatingNoteImpl implements _CreatingNote {
+  const _$CreatingNoteImpl();
+
+  @override
+  String toString() {
+    return 'MainPageState.creatingNote()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CreatingNoteImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) lackOfNotes,
+    required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
+  }) {
+    return creatingNote();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? lackOfNotes,
+    TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
+  }) {
+    return creatingNote?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? lackOfNotes,
+    TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
+    required TResult orElse(),
+  }) {
+    if (creatingNote != null) {
+      return creatingNote();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LackOfNotes value) lackOfNotes,
+    required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
+  }) {
+    return creatingNote(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LackOfNotes value)? lackOfNotes,
+    TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
+  }) {
+    return creatingNote?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LackOfNotes value)? lackOfNotes,
+    TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
+    required TResult orElse(),
+  }) {
+    if (creatingNote != null) {
+      return creatingNote(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreatingNote implements MainPageState {
+  const factory _CreatingNote() = _$CreatingNoteImpl;
+}
+
+/// @nodoc
+abstract class _$$CreatingNoteSuccessImplCopyWith<$Res> {
+  factory _$$CreatingNoteSuccessImplCopyWith(_$CreatingNoteSuccessImpl value,
+          $Res Function(_$CreatingNoteSuccessImpl) then) =
+      __$$CreatingNoteSuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CreatingNoteSuccessImplCopyWithImpl<$Res>
+    extends _$MainPageStateCopyWithImpl<$Res, _$CreatingNoteSuccessImpl>
+    implements _$$CreatingNoteSuccessImplCopyWith<$Res> {
+  __$$CreatingNoteSuccessImplCopyWithImpl(_$CreatingNoteSuccessImpl _value,
+      $Res Function(_$CreatingNoteSuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MainPageState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
+  const _$CreatingNoteSuccessImpl();
+
+  @override
+  String toString() {
+    return 'MainPageState.creatingNoteSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreatingNoteSuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) lackOfNotes,
+    required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
+  }) {
+    return creatingNoteSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? lackOfNotes,
+    TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
+  }) {
+    return creatingNoteSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? lackOfNotes,
+    TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
+    required TResult orElse(),
+  }) {
+    if (creatingNoteSuccess != null) {
+      return creatingNoteSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LackOfNotes value) lackOfNotes,
+    required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
+  }) {
+    return creatingNoteSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LackOfNotes value)? lackOfNotes,
+    TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
+  }) {
+    return creatingNoteSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LackOfNotes value)? lackOfNotes,
+    TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
+    required TResult orElse(),
+  }) {
+    if (creatingNoteSuccess != null) {
+      return creatingNoteSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreatingNoteSuccess implements MainPageState {
+  const factory _CreatingNoteSuccess() = _$CreatingNoteSuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$CreatingNoteFailureImplCopyWith<$Res> {
+  factory _$$CreatingNoteFailureImplCopyWith(_$CreatingNoteFailureImpl value,
+          $Res Function(_$CreatingNoteFailureImpl) then) =
+      __$$CreatingNoteFailureImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CreatingNoteFailureImplCopyWithImpl<$Res>
+    extends _$MainPageStateCopyWithImpl<$Res, _$CreatingNoteFailureImpl>
+    implements _$$CreatingNoteFailureImplCopyWith<$Res> {
+  __$$CreatingNoteFailureImplCopyWithImpl(_$CreatingNoteFailureImpl _value,
+      $Res Function(_$CreatingNoteFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MainPageState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
+  const _$CreatingNoteFailureImpl();
+
+  @override
+  String toString() {
+    return 'MainPageState.creatingNoteFailure()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreatingNoteFailureImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) lackOfNotes,
+    required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
+  }) {
+    return creatingNoteFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? lackOfNotes,
+    TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
+  }) {
+    return creatingNoteFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? lackOfNotes,
+    TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
+    required TResult orElse(),
+  }) {
+    if (creatingNoteFailure != null) {
+      return creatingNoteFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LackOfNotes value) lackOfNotes,
+    required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
+  }) {
+    return creatingNoteFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LackOfNotes value)? lackOfNotes,
+    TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
+  }) {
+    return creatingNoteFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LackOfNotes value)? lackOfNotes,
+    TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
+    required TResult orElse(),
+  }) {
+    if (creatingNoteFailure != null) {
+      return creatingNoteFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreatingNoteFailure implements MainPageState {
+  const factory _CreatingNoteFailure() = _$CreatingNoteFailureImpl;
+}
+
+/// @nodoc
+abstract class _$$RemovingNoteImplCopyWith<$Res> {
+  factory _$$RemovingNoteImplCopyWith(
+          _$RemovingNoteImpl value, $Res Function(_$RemovingNoteImpl) then) =
+      __$$RemovingNoteImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RemovingNoteImplCopyWithImpl<$Res>
+    extends _$MainPageStateCopyWithImpl<$Res, _$RemovingNoteImpl>
+    implements _$$RemovingNoteImplCopyWith<$Res> {
+  __$$RemovingNoteImplCopyWithImpl(
+      _$RemovingNoteImpl _value, $Res Function(_$RemovingNoteImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MainPageState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$RemovingNoteImpl implements _RemovingNote {
+  const _$RemovingNoteImpl();
+
+  @override
+  String toString() {
+    return 'MainPageState.removingNote()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RemovingNoteImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) lackOfNotes,
+    required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
+  }) {
+    return removingNote();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? lackOfNotes,
+    TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
+  }) {
+    return removingNote?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? lackOfNotes,
+    TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
+    required TResult orElse(),
+  }) {
+    if (removingNote != null) {
+      return removingNote();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LackOfNotes value) lackOfNotes,
+    required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
+  }) {
+    return removingNote(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LackOfNotes value)? lackOfNotes,
+    TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
+  }) {
+    return removingNote?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LackOfNotes value)? lackOfNotes,
+    TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
+    required TResult orElse(),
+  }) {
+    if (removingNote != null) {
+      return removingNote(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RemovingNote implements MainPageState {
+  const factory _RemovingNote() = _$RemovingNoteImpl;
 }

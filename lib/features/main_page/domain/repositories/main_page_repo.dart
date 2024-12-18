@@ -11,4 +11,13 @@ abstract class MainPageRepo{
     required GetStorage getStorage,
 });
 
+  Future<Either<Failure,void>> addNewNote({
+    required GetStorage getStorage,
+    required String noteName,
+    required String noteContent,
+    required String creationDate,
+    required bool movedToCalendar,
+    required bool haveReminder,
+    required DateTime reminderDate,
+});
 }

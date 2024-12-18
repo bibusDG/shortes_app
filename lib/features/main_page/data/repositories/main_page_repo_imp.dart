@@ -21,4 +21,28 @@ class MainPageRepoImp implements MainPageRepo{
       return const Left(GetUserNotesFailure(failureMessage: 'Unable to get user notes'));
     }
   }
+
+  @override
+  Future<Either<Failure, void>> addNewNote({
+    required GetStorage getStorage,
+    required String noteName,
+    required String noteContent,
+    required String creationDate,
+    required bool movedToCalendar,
+    required bool haveReminder,
+    required DateTime reminderDate}) async{
+    try{
+      final result = await dataSource.addNewNote(
+          getStorage: getStorage,
+          noteName: noteName,
+          noteContent: noteContent,
+          creationDate: creationDate,
+          movedToCalendar: movedToCalendar,
+          haveReminder: haveReminder,
+          reminderDate: reminderDate);
+      return Right(result);
+    }catch(error){
+      return const Left(AddNEwNoteFailure(failureMessage: 'Unable to add new note'));
+    }
+  }
 }

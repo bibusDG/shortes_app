@@ -17,10 +17,15 @@ class MainPage extends HookWidget {
     final textNoteContent = useTextEditingController();
 
     final userData = GetStorage();
-    userData.write('listOfNotes', [
-      UserNote(noteName: 'noteName', noteContent: 'noteContent', creationDate: 'creationDate', movedToCalendar: false, haveReminder: false, reminderDate: DateTime.now()),
-      UserNote(noteName: 'moja notka', noteContent: 'noteContent', creationDate: 'creationDate', movedToCalendar: false, haveReminder: false, reminderDate: DateTime.now())
-    ]);
+    // final List<dynamic> list = userData.read('listOfNotes');
+    // print(list);
+    // list.add(UserNote(noteName: 'noteName', noteContent: 'noteContent', creationDate: 'creationDate', movedToCalendar: false, haveReminder: false, reminderDate: DateTime.now()).toJson(),);
+    // print(list);
+    // userData.write('listOfNotes', list);
+    // userData.write('listOfNotes', [
+    //   UserNote(noteName: 'noteName', noteContent: 'noteContent', creationDate: 'creationDate', movedToCalendar: false, haveReminder: false, reminderDate: DateTime.now()),
+    //   UserNote(noteName: 'moja notka', noteContent: 'noteContent', creationDate: 'creationDate', movedToCalendar: false, haveReminder: false, reminderDate: DateTime.now())
+    // ]);
     final _mainPageCubit = useBloc<MainPageCubit>();
     final _mainPageState = useBlocBuilder(_mainPageCubit);
 
@@ -31,6 +36,19 @@ class MainPage extends HookWidget {
       [_mainPageCubit],
     );
 
+    useBlocListener<MainPageCubit, MainPageState>(_mainPageCubit, (bloc, current, context){
+      current.whenOrNull(
+        creatingNoteFailure: () async{
+          await Future.delayed((Duration(seconds: 3)));
+          _mainPageCubit.initMainPage(getStorage: userData);
+        },
+        creatingNoteSuccess: () async{
+          await Future.delayed((Duration(seconds: 3)));
+          _mainPageCubit.initMainPage(getStorage: userData);
+        }
+      );
+    });
+
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: GestureDetector(
@@ -39,6 +57,8 @@ class MainPage extends HookWidget {
               context: context,
               titleController: textNoteTitle,
               contentController: textNoteContent,
+              mainPageCubit: _mainPageCubit,
+              getStorage: userData,
           );
         },
         onLongPressStart: (test){
@@ -70,7 +90,7 @@ class MainPage extends HookWidget {
           return ListView.builder(
             itemCount: userNotes.length,
               itemBuilder: (BuildContext context, int index){
-              final UserNote userNote = userNotes[index];
+              final UserNote userNote = UserNote.fromJson(userNotes[index]);
               return Padding(
                 padding: const EdgeInsets.only(bottom: 10),
                 child: Slidable(
@@ -105,7 +125,7 @@ class MainPage extends HookWidget {
                         onPressed: null,
                         backgroundColor: Colors.red,
                         foregroundColor: Colors.white,
-                        child: Icon(Icons.delete, size: 40,),
+                        child: Icon(Icons.delete_forever, size: 40,),
 
                         // label: 'Add to calendar',
                       ),
@@ -118,6 +138,7 @@ class MainPage extends HookWidget {
                       color: Colors.white24,
                       child: ExpansionTile(
                         showTrailingIcon: false,
+                          enabled: userNote.noteContent.trim() == ''? false : true,
                           shape: const Border(),
                           title:
                               SizedBox(
@@ -155,7 +176,10 @@ class MainPage extends HookWidget {
               );
 
           });
-        }
+        },
+        creatingNote: () => Center(child: CircularProgressIndicator(),),
+        creatingNoteFailure: () => Center(child: Text('Not possible to create new note.'),),
+        creatingNoteSuccess: () => Center(child: Text('New note created'),),
       ),
     );
   }
@@ -164,6 +188,8 @@ class MainPage extends HookWidget {
     required BuildContext context,
     required TextEditingController titleController,
     required TextEditingController contentController,
+    required MainPageCubit mainPageCubit,
+    required GetStorage getStorage,
   }){
     showDialog(
       barrierDismissible: false,
@@ -213,15 +239,39 @@ class MainPage extends HookWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   IconButton(
-                    onPressed: (){},
-                    icon: Icon(Icons.check_circle, size: 40,),),
+                    onPressed: () async{
+                      if(contentController.text.isNotEmpty && titleController.text.isNotEmpty){
+                        context.pop();
+                        await mainPageCubit.addNewNote(
+                            getStorage: getStorage, 
+                            noteTitle: titleController.text.trim(), 
+                            noteContent: contentController.text.trim());
+                      }else if(contentController.text.isNotEmpty && titleController.text.isEmpty){
+                        final newNoteTitle = contentController.text.trim().split(' ').take(2).join(' ');
+                        context.pop();
+                        await mainPageCubit.addNewNote(
+                            getStorage: getStorage,
+                            noteTitle: newNoteTitle,
+                            noteContent: contentController.text.trim());
+                      }else if(contentController.text.isEmpty && titleController.text.isNotEmpty){
+                        context.pop();
+                        await mainPageCubit.addNewNote(
+                            getStorage: getStorage,
+                            noteTitle: titleController.text.trim(),
+                            noteContent: '');
+                      }else{
+                        print('not possible to save');
+                      }
+
+                    },
+                    icon: Icon(Icons.check_circle, size: 45, color: Colors.green,),),
                   IconButton(
                     onPressed: (){
                       context.pop();
                       contentController.clear();
                       titleController.clear();
                     },
-                    icon: Icon(Icons.cancel, size: 40,))
+                    icon: Icon(Icons.cancel, size: 45, color: Colors.red,))
                 ]
 
               ),
@@ -231,5 +281,4 @@ class MainPage extends HookWidget {
       );
     });
   }
-
 }

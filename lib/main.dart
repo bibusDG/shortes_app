@@ -12,12 +12,13 @@ import 'core/di.dart';
 import 'features/main_page/domain/entities/user_note.dart';
 
 void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
   await GetStorage.init();
   final userData = GetStorage();
   userData.writeIfNull('listOfNotes', []);
   userData.writeIfNull('language', '');
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   configureDependencies();
 
   runApp(
