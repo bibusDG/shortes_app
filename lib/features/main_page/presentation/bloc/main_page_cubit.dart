@@ -28,8 +28,8 @@ class MainPageCubit extends Cubit<MainPageState> {
       print('failure');
     }, (success){
       if(success.isEmpty){
-        emit(MainPageState.lackOfNotes(message: 'Press + icon to add note via voice or '
-            'tap twice + icon to add written note.'));
+        emit(MainPageState.lackOfNotes(message: 'Press and hold "+" icon to add note via voice or '
+            'tap "+" icon to add written note.'));
       }else{
         emit(MainPageState.notes(userNotes: success));
       }

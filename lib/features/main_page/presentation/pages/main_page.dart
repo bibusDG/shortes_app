@@ -91,9 +91,15 @@ class MainPage extends HookWidget {
         ),
       ),
       body: _mainPageState.whenOrNull(
-        lackOfNotes: (message) => Center(child: SizedBox(
-          width: 250,
-            child: Text(message, textAlign: TextAlign.justify,)),),
+        lackOfNotes: (message) => Center(child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/images/shortes.png', scale: 0.8,),
+            SizedBox(
+              width: 250,
+                child: Text(message, textAlign: TextAlign.center,)),
+          ],
+        ),),
         notes: (userNotes) {
           return ListView.builder(
             itemCount: userNotes.length,
@@ -207,33 +213,20 @@ class MainPage extends HookWidget {
     showDialog(
       barrierDismissible: false,
         context: context, builder: (BuildContext context){
-      return AlertDialog(
-        title: const Center(child: Text('Create Shorte'),),
-        content: SizedBox(
-          height: 450,
-          width: 300,
-          child: Column(
-            children: [
-              TextField(
-              controller: titleController,
-              decoration: InputDecoration(
-                focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color:Colors.black, width: 3.5),
-                ),
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color:Colors.black, width: 1.5),
-                ),
-                border: const OutlineInputBorder(),
-                hintText: 'Note name',
-              ),),
-              const SizedBox(height: 20,),
-              SizedBox(
-                height: 300,
-                child: TextField(
-                  keyboardType: TextInputType.multiline,
-                  minLines: 1,
-                  maxLines: 10,
-                  controller: contentController,
+      return GestureDetector(
+        onTap: (){
+          FocusScope.of(context).unfocus();
+        },
+        child: AlertDialog(
+          title: const Center(child: Text('Create Shorte'),),
+          content: SingleChildScrollView(
+            child: SizedBox(
+              height: 350,
+              width: 300,
+              child: Column(
+                children: [
+                  TextField(
+                  controller: titleController,
                   decoration: InputDecoration(
                     focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color:Colors.black, width: 3.5),
@@ -242,59 +235,79 @@ class MainPage extends HookWidget {
                       borderSide: BorderSide(color:Colors.black, width: 1.5),
                     ),
                     border: const OutlineInputBorder(),
-                    hintText: 'Content',
+                    hintText: 'Note name',
                   ),),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  IconButton(
-                    onPressed: () async{
-                      if(contentController.text.isNotEmpty && titleController.text.isNotEmpty){
-                        context.pop();
-                        await mainPageCubit.addNewNote(
-                            getStorage: getStorage, 
-                            noteTitle: titleController.text.trim(), 
-                            noteContent: contentController.text.trim());
-                        contentController.clear();
-                        titleController.clear();
-                      }else if(contentController.text.isNotEmpty && titleController.text.isEmpty){
-                        final newNoteTitle = contentController.text.trim().split(' ').take(2).join(' ');
-                        context.pop();
-                        await mainPageCubit.addNewNote(
-                            getStorage: getStorage,
-                            noteTitle: newNoteTitle,
-                            noteContent: contentController.text.trim());
-                        contentController.clear();
-                        titleController.clear();
-                      }else if(contentController.text.isEmpty && titleController.text.isNotEmpty){
-                        context.pop();
-                        await mainPageCubit.addNewNote(
-                            getStorage: getStorage,
-                            noteTitle: titleController.text.trim(),
-                            noteContent: '');
-                        contentController.clear();
-                        titleController.clear();
-                      }else{
-                        context.pop();
-                      }
+                  const SizedBox(height: 20,),
+                  SizedBox(
+                    height: 200,
+                    child: TextField(
+                      keyboardType: TextInputType.multiline,
+                      minLines: 1,
+                      maxLines: 10,
+                      controller: contentController,
+                      decoration: InputDecoration(
+                        focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(color:Colors.black, width: 3.5),
+                        ),
+                        enabledBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(color:Colors.black, width: 1.5),
+                        ),
+                        border: const OutlineInputBorder(),
+                        hintText: 'Content',
+                      ),),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      IconButton(
+                        onPressed: () async{
+                          if(contentController.text.isNotEmpty && titleController.text.isNotEmpty){
+                            context.pop();
+                            await mainPageCubit.addNewNote(
+                                getStorage: getStorage,
+                                noteTitle: titleController.text.trim(),
+                                noteContent: contentController.text.trim());
+                            contentController.clear();
+                            titleController.clear();
+                          }else if(contentController.text.isNotEmpty && titleController.text.isEmpty){
+                            final newNoteTitle = contentController.text.trim().split(' ').take(2).join(' ');
+                            context.pop();
+                            await mainPageCubit.addNewNote(
+                                getStorage: getStorage,
+                                noteTitle: newNoteTitle,
+                                noteContent: contentController.text.trim());
+                            contentController.clear();
+                            titleController.clear();
+                          }else if(contentController.text.isEmpty && titleController.text.isNotEmpty){
+                            context.pop();
+                            await mainPageCubit.addNewNote(
+                                getStorage: getStorage,
+                                noteTitle: titleController.text.trim(),
+                                noteContent: '');
+                            contentController.clear();
+                            titleController.clear();
+                          }else{
+                            context.pop();
+                          }
 
-                    },
-                    icon: Icon(Icons.check_circle, size: 45, color: Colors.green,),),
-                  IconButton(
-                    onPressed: (){
-                      context.pop();
-                      contentController.clear();
-                      titleController.clear();
-                    },
-                    icon: Icon(Icons.cancel, size: 45, color: Colors.red,))
-                ]
+                        },
+                        icon: Icon(Icons.check_circle, size: 45, color: Colors.green,),),
+                      IconButton(
+                        onPressed: (){
+                          context.pop();
+                          contentController.clear();
+                          titleController.clear();
+                        },
+                        icon: Icon(Icons.cancel, size: 45, color: Colors.red,))
+                    ]
 
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       );
