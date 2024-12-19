@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -6,6 +7,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hooked_bloc/hooked_bloc.dart';
 import 'package:shortes/features/main_page/domain/entities/user_note.dart';
 import 'package:shortes/features/main_page/presentation/bloc/main_page_cubit.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 
 class MainPage extends HookWidget {
   const MainPage({super.key});
@@ -13,19 +16,22 @@ class MainPage extends HookWidget {
   @override
   Widget build(BuildContext context) {
 
+    final SpeechToText _speechToText = SpeechToText();
+    final _lastWords = useState('');
+    final _speechEnabled = useState(false);
+
     final textNoteTitle = useTextEditingController();
     final textNoteContent = useTextEditingController();
+    final voiceTextController = useTextEditingController();
+
+    SpeechFunctions(
+      voiceTextController: voiceTextController,
+      speechEnabled: _speechEnabled,
+      speechToText: _speechToText,
+      lastWords: _lastWords,
+    ).initSpeech();
 
     final userData = GetStorage();
-    // final List<dynamic> list = userData.read('listOfNotes');
-    // print(list);
-    // list.add(UserNote(noteName: 'noteName', noteContent: 'noteContent', creationDate: 'creationDate', movedToCalendar: false, haveReminder: false, reminderDate: DateTime.now()).toJson(),);
-    // print(list);
-    // userData.write('listOfNotes', list);
-    // userData.write('listOfNotes', [
-    //   UserNote(noteName: 'noteName', noteContent: 'noteContent', creationDate: 'creationDate', movedToCalendar: false, haveReminder: false, reminderDate: DateTime.now()),
-    //   UserNote(noteName: 'moja notka', noteContent: 'noteContent', creationDate: 'creationDate', movedToCalendar: false, haveReminder: false, reminderDate: DateTime.now())
-    // ]);
     final _mainPageCubit = useBloc<MainPageCubit>();
     final _mainPageState = useBlocBuilder(_mainPageCubit);
 
@@ -69,11 +75,32 @@ class MainPage extends HookWidget {
               getStorage: userData,
           );
         },
-        onLongPressStart: (test){
-            print('start');
-          },
-        onLongPressEnd: (test){
-            print('end');
+        onLongPress: () async{
+            if(_speechEnabled.value == true) {
+              voiceTextController.clear();
+              await createVoiceNote(
+                  context: context,
+                  voiceTextController: voiceTextController,
+                  speechToText: _speechToText,
+                  speechEnabled: _speechEnabled,
+                  lastWords: _lastWords,
+                  mainPageCubit: _mainPageCubit,
+                  getStorage: userData,
+              );
+              // SpeechFunctions(
+              //   voiceTextController: voiceTextController,
+              //   speechEnabled: _speechEnabled,
+              //   speechToText: _speechToText,
+              //   lastWords: _lastWords,
+              // ).startListening();
+            }else{
+              SpeechFunctions(
+                voiceTextController: voiceTextController,
+                speechEnabled: _speechEnabled,
+                speechToText: _speechToText,
+                lastWords: _lastWords,
+              ).initSpeech();
+            }
           },
           child: Icon(Icons.add_circle, size: 100,)),
       appBar: _mainPageState.whenOrNull(
@@ -94,7 +121,7 @@ class MainPage extends HookWidget {
         lackOfNotes: (message) => Center(child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/shortes.png', scale: 0.8,),
+            Image.asset('assets/images/shortes_big.png', scale: 1.8,),
             SizedBox(
               width: 250,
                 child: Text(message, textAlign: TextAlign.center,)),
@@ -184,7 +211,10 @@ class MainPage extends HookWidget {
                         children: [
                           SizedBox(
                             height: 200,
-                              child: Center(child: Text(userNote.noteContent)))
+                              child: Center(child: Padding(
+                                padding: const EdgeInsets.only(left: 10, right: 10),
+                                child: Text(userNote.noteContent, textAlign: TextAlign.justify,),
+                              )))
                         ]),
                     ),
                   ),
@@ -313,4 +343,123 @@ class MainPage extends HookWidget {
       );
     });
   }
+
+  Future<void> createVoiceNote({
+    required BuildContext context,
+    required TextEditingController voiceTextController,
+    required SpeechToText speechToText,
+    required ValueNotifier lastWords,
+    required ValueNotifier speechEnabled,
+    required MainPageCubit mainPageCubit,
+    required GetStorage getStorage,
+})async {
+    await SpeechFunctions(
+      voiceTextController: voiceTextController,
+      speechEnabled: speechEnabled,
+      speechToText: speechToText,
+      lastWords: lastWords,
+    ).startListening();
+    if(context.mounted){
+      showDialog(context: context, builder: (BuildContext context){
+        return ValueListenableBuilder(
+          valueListenable: lastWords,
+          builder: (context, value, child){
+            return AlertDialog(
+              title: const Center(child: Text('Create Shorte'),),
+              content: SizedBox(
+                height: 350,
+                width: 300,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      alignment: Alignment.topCenter,
+                      width: 300,
+                      height: 250,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: SingleChildScrollView(
+                          reverse: true,
+                          child: Text(value, textAlign: TextAlign.justify,),
+                        ),
+                      ),
+                    ),
+                    // TextField(
+                    //   keyboardType: TextInputType.multiline,
+                    //   minLines: 2,
+                    //   maxLines: 2,
+                    //   controller: voiceTextController,
+                    //   decoration: InputDecoration(
+                    //     focusedBorder: const OutlineInputBorder(
+                    //       borderSide: BorderSide(color:Colors.black, width: 3.5),
+                    //     ),
+                    //     enabledBorder: const OutlineInputBorder(
+                    //       borderSide: BorderSide(color:Colors.black, width: 1.5),
+                    //     ),
+                    //     border: const OutlineInputBorder(),
+                    //   ),),
+                    IconButton(onPressed: () async{
+                      if(voiceTextController.text.trim().isEmpty){
+                        if(context.mounted){
+                          context.pop();
+                        }
+                      }else{
+                        if(context.mounted){
+                          context.pop();
+                        }
+                        await mainPageCubit.addNewNote(
+                            getStorage: getStorage,
+                            noteTitle: voiceTextController.text.trim().split(' ').take(2).join(' '),
+                            noteContent: voiceTextController.text.trim());
+                      }
+                      await SpeechFunctions(
+                          speechToText: speechToText,
+                          speechEnabled: speechEnabled,
+                          lastWords: lastWords,
+                          voiceTextController: voiceTextController
+                      ).stopListening();
+                    }, icon: Icon(Icons.stop_circle, size: 60, color: Colors.red,)),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      });
+    }
+  }
+
+}
+
+class SpeechFunctions {
+  final ValueNotifier lastWords;
+  final SpeechToText speechToText;
+  final ValueNotifier speechEnabled;
+  final TextEditingController voiceTextController;
+  const SpeechFunctions({
+    required this.speechToText,
+    required this.lastWords,
+    required this.speechEnabled,
+    required this.voiceTextController,
+});
+
+  void initSpeech() async{
+    speechEnabled.value = await speechToText.initialize();
+    // print(speechEnabled.value);
+  }
+
+  Future<void> startListening() async{
+    await speechToText.listen(onResult: _onSpeechResult);
+  }
+
+  void _onSpeechResult(SpeechRecognitionResult result) {
+    lastWords.value = result.recognizedWords;
+    voiceTextController.text = result.recognizedWords;
+  }
+
+  Future<void> stopListening() async{
+    print('stopped');
+    await speechToText.stop();
+  }
+
 }
