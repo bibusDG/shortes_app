@@ -45,4 +45,14 @@ class MainPageRepoImp implements MainPageRepo{
       return const Left(AddNEwNoteFailure(failureMessage: 'Unable to add new note'));
     }
   }
+
+  @override
+  Future<Either<Failure, void>> deleteNote({required GetStorage getStorage, required int index}) async{
+    try{
+      final result = await dataSource.deleteNote(getStorage: getStorage, index: index);
+      return Right(result);
+    }catch(error){
+      return const Left(DeleteNoteFailure(failureMessage: 'Unable to delete note'));
+    }
+  }
 }

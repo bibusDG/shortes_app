@@ -20,4 +20,10 @@ abstract class MainPageRepo{
     required bool haveReminder,
     required DateTime reminderDate,
 });
+
+  Future<Either<Failure, void>> deleteNote({
+    required GetStorage getStorage,
+    required int index,
+});
+
 }

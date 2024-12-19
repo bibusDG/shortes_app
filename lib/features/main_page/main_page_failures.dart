@@ -7,3 +7,7 @@ class GetUserNotesFailure extends Failure{
 class AddNEwNoteFailure extends Failure{
   const AddNEwNoteFailure({required super.failureMessage});
 }
+
+class DeleteNoteFailure extends Failure{
+  const DeleteNoteFailure({required super.failureMessage});
+}

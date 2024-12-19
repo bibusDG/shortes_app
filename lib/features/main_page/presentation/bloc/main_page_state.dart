@@ -9,4 +9,6 @@ class MainPageState with _$MainPageState {
   const factory MainPageState.creatingNoteSuccess() = _CreatingNoteSuccess;
   const factory MainPageState.creatingNoteFailure() = _CreatingNoteFailure;
   const factory MainPageState.removingNote() = _RemovingNote;
+  const factory MainPageState.noteRemovedSuccess() = _NoteRemovedSuccess;
+  const factory MainPageState.noteRemovedFailure() = _NoteRemovedFailure;
 }

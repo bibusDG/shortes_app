@@ -45,6 +45,14 @@ class MainPage extends HookWidget {
         creatingNoteSuccess: () async{
           await Future.delayed((Duration(seconds: 3)));
           _mainPageCubit.initMainPage(getStorage: userData);
+        },
+        noteRemovedFailure: () async{
+          await Future.delayed((Duration(seconds: 3)));
+          _mainPageCubit.initMainPage(getStorage: userData);
+        },
+        noteRemovedSuccess: () async{
+          await Future.delayed((Duration(seconds: 3)));
+          _mainPageCubit.initMainPage(getStorage: userData);
         }
       );
     });
@@ -97,10 +105,10 @@ class MainPage extends HookWidget {
                   key: const ValueKey(0),
                   closeOnScroll: true,
                   // The end action pane is the one at the right or the bottom side.
-                  endActionPane: const ActionPane(
-                    motion: StretchMotion(),
+                  endActionPane: ActionPane(
+                    motion: const StretchMotion(),
                     children: [
-                      CustomSlidableAction(
+                      const CustomSlidableAction(
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
                         // An action can be bigger than the others.
                         flex: 1,
@@ -111,7 +119,7 @@ class MainPage extends HookWidget {
 
                         // label: 'Add to calendar',
                       ),
-                      CustomSlidableAction(
+                      const CustomSlidableAction(
                         flex: 1,
                         onPressed: null,
                         backgroundColor: Color(0xFF0392CF),
@@ -122,10 +130,12 @@ class MainPage extends HookWidget {
                       CustomSlidableAction(
                         // An action can be bigger than the others.
                         flex: 1,
-                        onPressed: null,
+                        onPressed: (context) async{
+                          await _mainPageCubit.removeNote(getStorage: userData, index: index);
+                        },
                         backgroundColor: Colors.red,
                         foregroundColor: Colors.white,
-                        child: Icon(Icons.delete_forever, size: 40,),
+                        child: const Icon(Icons.delete_forever, size: 40,),
 
                         // label: 'Add to calendar',
                       ),
@@ -180,6 +190,9 @@ class MainPage extends HookWidget {
         creatingNote: () => Center(child: CircularProgressIndicator(),),
         creatingNoteFailure: () => Center(child: Text('Not possible to create new note.'),),
         creatingNoteSuccess: () => Center(child: Text('New note created'),),
+        noteRemovedFailure: () => Center(child: Text('Note remove failure'),),
+        noteRemovedSuccess: () => Center(child: Text('Note removed'),),
+        removingNote: () => Center(child: CircularProgressIndicator()),
       ),
     );
   }
@@ -246,6 +259,8 @@ class MainPage extends HookWidget {
                             getStorage: getStorage, 
                             noteTitle: titleController.text.trim(), 
                             noteContent: contentController.text.trim());
+                        contentController.clear();
+                        titleController.clear();
                       }else if(contentController.text.isNotEmpty && titleController.text.isEmpty){
                         final newNoteTitle = contentController.text.trim().split(' ').take(2).join(' ');
                         context.pop();
@@ -253,14 +268,18 @@ class MainPage extends HookWidget {
                             getStorage: getStorage,
                             noteTitle: newNoteTitle,
                             noteContent: contentController.text.trim());
+                        contentController.clear();
+                        titleController.clear();
                       }else if(contentController.text.isEmpty && titleController.text.isNotEmpty){
                         context.pop();
                         await mainPageCubit.addNewNote(
                             getStorage: getStorage,
                             noteTitle: titleController.text.trim(),
                             noteContent: '');
+                        contentController.clear();
+                        titleController.clear();
                       }else{
-                        print('not possible to save');
+                        context.pop();
                       }
 
                     },

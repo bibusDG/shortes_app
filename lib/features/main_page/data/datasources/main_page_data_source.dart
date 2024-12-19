@@ -19,6 +19,11 @@ abstract class MainPageDataSource{
     required DateTime reminderDate,
   });
 
+  Future<void> deleteNote({
+    required GetStorage getStorage,
+    required int index,
+  });
+
 }
 @Singleton(as: MainPageDataSource)
 class MainPageDataSourceImp implements MainPageDataSource{
@@ -38,7 +43,7 @@ class MainPageDataSourceImp implements MainPageDataSource{
     required bool haveReminder,
     required DateTime reminderDate}) async{
     final List<dynamic> listOfNotes = await getStorage.read('listOfNotes');
-    listOfNotes.add(
+    listOfNotes.insert(0,
       UserNote(
           noteName: noteName,
           noteContent: noteContent,
@@ -47,6 +52,13 @@ class MainPageDataSourceImp implements MainPageDataSource{
           haveReminder: haveReminder,
           reminderDate: reminderDate).toJson(),
     );
+    getStorage.write('listOfNotes', listOfNotes);
+  }
+
+  @override
+  Future<void> deleteNote({required GetStorage getStorage, required int index}) async{
+    final List<dynamic> listOfNotes = await getStorage.read('listOfNotes');
+    listOfNotes.removeAt(index);
     getStorage.write('listOfNotes', listOfNotes);
   }
 }

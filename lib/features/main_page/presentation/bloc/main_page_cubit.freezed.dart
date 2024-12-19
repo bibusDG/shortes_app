@@ -25,6 +25,8 @@ mixin _$MainPageState {
     required TResult Function() creatingNoteSuccess,
     required TResult Function() creatingNoteFailure,
     required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +38,8 @@ mixin _$MainPageState {
     TResult? Function()? creatingNoteSuccess,
     TResult? Function()? creatingNoteFailure,
     TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +51,8 @@ mixin _$MainPageState {
     TResult Function()? creatingNoteSuccess,
     TResult Function()? creatingNoteFailure,
     TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +65,8 @@ mixin _$MainPageState {
     required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
     required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
     required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +78,8 @@ mixin _$MainPageState {
     TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +91,8 @@ mixin _$MainPageState {
     TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,6 +167,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function() creatingNoteSuccess,
     required TResult Function() creatingNoteFailure,
     required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
   }) {
     return initial();
   }
@@ -169,6 +183,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? creatingNoteSuccess,
     TResult? Function()? creatingNoteFailure,
     TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
   }) {
     return initial?.call();
   }
@@ -183,6 +199,8 @@ class _$InitialImpl implements _Initial {
     TResult Function()? creatingNoteSuccess,
     TResult Function()? creatingNoteFailure,
     TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -201,6 +219,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
     required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
     required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
   }) {
     return initial(this);
   }
@@ -215,6 +235,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
   }) {
     return initial?.call(this);
   }
@@ -229,6 +251,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -317,6 +341,8 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     required TResult Function() creatingNoteSuccess,
     required TResult Function() creatingNoteFailure,
     required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
   }) {
     return lackOfNotes(message);
   }
@@ -331,6 +357,8 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult? Function()? creatingNoteSuccess,
     TResult? Function()? creatingNoteFailure,
     TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
   }) {
     return lackOfNotes?.call(message);
   }
@@ -345,6 +373,8 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult Function()? creatingNoteSuccess,
     TResult Function()? creatingNoteFailure,
     TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (lackOfNotes != null) {
@@ -363,6 +393,8 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
     required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
     required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
   }) {
     return lackOfNotes(this);
   }
@@ -377,6 +409,8 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
   }) {
     return lackOfNotes?.call(this);
   }
@@ -391,6 +425,8 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (lackOfNotes != null) {
@@ -496,6 +532,8 @@ class _$NotesImpl implements _Notes {
     required TResult Function() creatingNoteSuccess,
     required TResult Function() creatingNoteFailure,
     required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
   }) {
     return notes(userNotes);
   }
@@ -510,6 +548,8 @@ class _$NotesImpl implements _Notes {
     TResult? Function()? creatingNoteSuccess,
     TResult? Function()? creatingNoteFailure,
     TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
   }) {
     return notes?.call(userNotes);
   }
@@ -524,6 +564,8 @@ class _$NotesImpl implements _Notes {
     TResult Function()? creatingNoteSuccess,
     TResult Function()? creatingNoteFailure,
     TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (notes != null) {
@@ -542,6 +584,8 @@ class _$NotesImpl implements _Notes {
     required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
     required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
     required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
   }) {
     return notes(this);
   }
@@ -556,6 +600,8 @@ class _$NotesImpl implements _Notes {
     TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
   }) {
     return notes?.call(this);
   }
@@ -570,6 +616,8 @@ class _$NotesImpl implements _Notes {
     TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (notes != null) {
@@ -639,6 +687,8 @@ class _$CreatingNoteImpl implements _CreatingNote {
     required TResult Function() creatingNoteSuccess,
     required TResult Function() creatingNoteFailure,
     required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
   }) {
     return creatingNote();
   }
@@ -653,6 +703,8 @@ class _$CreatingNoteImpl implements _CreatingNote {
     TResult? Function()? creatingNoteSuccess,
     TResult? Function()? creatingNoteFailure,
     TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
   }) {
     return creatingNote?.call();
   }
@@ -667,6 +719,8 @@ class _$CreatingNoteImpl implements _CreatingNote {
     TResult Function()? creatingNoteSuccess,
     TResult Function()? creatingNoteFailure,
     TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (creatingNote != null) {
@@ -685,6 +739,8 @@ class _$CreatingNoteImpl implements _CreatingNote {
     required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
     required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
     required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
   }) {
     return creatingNote(this);
   }
@@ -699,6 +755,8 @@ class _$CreatingNoteImpl implements _CreatingNote {
     TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
   }) {
     return creatingNote?.call(this);
   }
@@ -713,6 +771,8 @@ class _$CreatingNoteImpl implements _CreatingNote {
     TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (creatingNote != null) {
@@ -775,6 +835,8 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     required TResult Function() creatingNoteSuccess,
     required TResult Function() creatingNoteFailure,
     required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
   }) {
     return creatingNoteSuccess();
   }
@@ -789,6 +851,8 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     TResult? Function()? creatingNoteSuccess,
     TResult? Function()? creatingNoteFailure,
     TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
   }) {
     return creatingNoteSuccess?.call();
   }
@@ -803,6 +867,8 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     TResult Function()? creatingNoteSuccess,
     TResult Function()? creatingNoteFailure,
     TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (creatingNoteSuccess != null) {
@@ -821,6 +887,8 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
     required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
     required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
   }) {
     return creatingNoteSuccess(this);
   }
@@ -835,6 +903,8 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
   }) {
     return creatingNoteSuccess?.call(this);
   }
@@ -849,6 +919,8 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (creatingNoteSuccess != null) {
@@ -911,6 +983,8 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     required TResult Function() creatingNoteSuccess,
     required TResult Function() creatingNoteFailure,
     required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
   }) {
     return creatingNoteFailure();
   }
@@ -925,6 +999,8 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     TResult? Function()? creatingNoteSuccess,
     TResult? Function()? creatingNoteFailure,
     TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
   }) {
     return creatingNoteFailure?.call();
   }
@@ -939,6 +1015,8 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     TResult Function()? creatingNoteSuccess,
     TResult Function()? creatingNoteFailure,
     TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (creatingNoteFailure != null) {
@@ -957,6 +1035,8 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
     required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
     required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
   }) {
     return creatingNoteFailure(this);
   }
@@ -971,6 +1051,8 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
   }) {
     return creatingNoteFailure?.call(this);
   }
@@ -985,6 +1067,8 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (creatingNoteFailure != null) {
@@ -1046,6 +1130,8 @@ class _$RemovingNoteImpl implements _RemovingNote {
     required TResult Function() creatingNoteSuccess,
     required TResult Function() creatingNoteFailure,
     required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
   }) {
     return removingNote();
   }
@@ -1060,6 +1146,8 @@ class _$RemovingNoteImpl implements _RemovingNote {
     TResult? Function()? creatingNoteSuccess,
     TResult? Function()? creatingNoteFailure,
     TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
   }) {
     return removingNote?.call();
   }
@@ -1074,6 +1162,8 @@ class _$RemovingNoteImpl implements _RemovingNote {
     TResult Function()? creatingNoteSuccess,
     TResult Function()? creatingNoteFailure,
     TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (removingNote != null) {
@@ -1092,6 +1182,8 @@ class _$RemovingNoteImpl implements _RemovingNote {
     required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
     required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
     required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
   }) {
     return removingNote(this);
   }
@@ -1106,6 +1198,8 @@ class _$RemovingNoteImpl implements _RemovingNote {
     TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
   }) {
     return removingNote?.call(this);
   }
@@ -1120,6 +1214,8 @@ class _$RemovingNoteImpl implements _RemovingNote {
     TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
     TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
     TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
     required TResult orElse(),
   }) {
     if (removingNote != null) {
@@ -1131,4 +1227,298 @@ class _$RemovingNoteImpl implements _RemovingNote {
 
 abstract class _RemovingNote implements MainPageState {
   const factory _RemovingNote() = _$RemovingNoteImpl;
+}
+
+/// @nodoc
+abstract class _$$NoteRemovedSuccessImplCopyWith<$Res> {
+  factory _$$NoteRemovedSuccessImplCopyWith(_$NoteRemovedSuccessImpl value,
+          $Res Function(_$NoteRemovedSuccessImpl) then) =
+      __$$NoteRemovedSuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NoteRemovedSuccessImplCopyWithImpl<$Res>
+    extends _$MainPageStateCopyWithImpl<$Res, _$NoteRemovedSuccessImpl>
+    implements _$$NoteRemovedSuccessImplCopyWith<$Res> {
+  __$$NoteRemovedSuccessImplCopyWithImpl(_$NoteRemovedSuccessImpl _value,
+      $Res Function(_$NoteRemovedSuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MainPageState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$NoteRemovedSuccessImpl implements _NoteRemovedSuccess {
+  const _$NoteRemovedSuccessImpl();
+
+  @override
+  String toString() {
+    return 'MainPageState.noteRemovedSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NoteRemovedSuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) lackOfNotes,
+    required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
+  }) {
+    return noteRemovedSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? lackOfNotes,
+    TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
+  }) {
+    return noteRemovedSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? lackOfNotes,
+    TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
+    required TResult orElse(),
+  }) {
+    if (noteRemovedSuccess != null) {
+      return noteRemovedSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LackOfNotes value) lackOfNotes,
+    required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+  }) {
+    return noteRemovedSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LackOfNotes value)? lackOfNotes,
+    TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+  }) {
+    return noteRemovedSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LackOfNotes value)? lackOfNotes,
+    TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    required TResult orElse(),
+  }) {
+    if (noteRemovedSuccess != null) {
+      return noteRemovedSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NoteRemovedSuccess implements MainPageState {
+  const factory _NoteRemovedSuccess() = _$NoteRemovedSuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$NoteRemovedFailureImplCopyWith<$Res> {
+  factory _$$NoteRemovedFailureImplCopyWith(_$NoteRemovedFailureImpl value,
+          $Res Function(_$NoteRemovedFailureImpl) then) =
+      __$$NoteRemovedFailureImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NoteRemovedFailureImplCopyWithImpl<$Res>
+    extends _$MainPageStateCopyWithImpl<$Res, _$NoteRemovedFailureImpl>
+    implements _$$NoteRemovedFailureImplCopyWith<$Res> {
+  __$$NoteRemovedFailureImplCopyWithImpl(_$NoteRemovedFailureImpl _value,
+      $Res Function(_$NoteRemovedFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MainPageState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$NoteRemovedFailureImpl implements _NoteRemovedFailure {
+  const _$NoteRemovedFailureImpl();
+
+  @override
+  String toString() {
+    return 'MainPageState.noteRemovedFailure()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NoteRemovedFailureImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) lackOfNotes,
+    required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
+  }) {
+    return noteRemovedFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? lackOfNotes,
+    TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
+  }) {
+    return noteRemovedFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? lackOfNotes,
+    TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
+    required TResult orElse(),
+  }) {
+    if (noteRemovedFailure != null) {
+      return noteRemovedFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LackOfNotes value) lackOfNotes,
+    required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+  }) {
+    return noteRemovedFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LackOfNotes value)? lackOfNotes,
+    TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+  }) {
+    return noteRemovedFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LackOfNotes value)? lackOfNotes,
+    TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    required TResult orElse(),
+  }) {
+    if (noteRemovedFailure != null) {
+      return noteRemovedFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NoteRemovedFailure implements MainPageState {
+  const factory _NoteRemovedFailure() = _$NoteRemovedFailureImpl;
 }
