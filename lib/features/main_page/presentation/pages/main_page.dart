@@ -72,10 +72,6 @@ class MainPage extends HookWidget {
           await Future.delayed((Duration(seconds: 3)));
           _mainPageCubit.initMainPage(getStorage: userData);
         },
-        addToCalendarSuccess: () async{
-          await Future.delayed((Duration(seconds: 5)));
-          _mainPageCubit.initMainPage(getStorage: userData);
-        }
       );
     });
 
@@ -128,9 +124,6 @@ class MainPage extends HookWidget {
             child: Image.asset('assets/images/shortes.png'),
           ),
           centerTitle: true,
-          actions: [
-            Icon(Icons.language)
-          ],
           backgroundColor: Colors.transparent,
         ),
       ),
@@ -201,7 +194,7 @@ class MainPage extends HookWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 5, right: 5),
                     child: Card(
-                      color: Colors.white24,
+                      color: Colors.white10,
                       child: ExpansionTile(
                         showTrailingIcon: false,
                           enabled: userNote.noteContent.trim() == ''? false : true,

@@ -1,3 +1,4 @@
+import 'package:add_2_calendar/add_2_calendar.dart';
 import 'package:dartz/dartz.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shortes/features/main_page/domain/entities/user_note.dart';
@@ -26,7 +27,7 @@ abstract class MainPageRepo{
     required int index,
 });
 
-  Future<Either<Failure, void>> addNoteToCalendar({
+  Future<Either<Failure, Event>> addNoteToCalendar({
     required String noteTitle,
     required String noteContent,
 });

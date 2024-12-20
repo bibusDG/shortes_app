@@ -1,3 +1,4 @@
+import 'package:add_2_calendar/add_2_calendar.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get_storage/get_storage.dart';
@@ -76,13 +77,14 @@ class MainPageCubit extends Cubit<MainPageState> {
     required String noteTitle,
     required String noteContent,
   }) async{
-    emit(MainPageState.addingToCalendar());
+    // emit(MainPageState.addingToCalendar());
     final result = await addNoteToCalendarUseCase
       (AddToCalendarParams(noteContent: noteContent, noteTitle: noteTitle));
     result.fold((failure){
       emit(MainPageState.addToCalendarFailure());
-    }, (success){
-      emit(MainPageState.addToCalendarSuccess());
+    }, (event) async{
+      await Add2Calendar.addEvent2Cal(event);
+      // emit(MainPageState.addToCalendarSuccess());
     });
   }
 

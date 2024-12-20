@@ -1,3 +1,4 @@
+import 'package:add_2_calendar/add_2_calendar.dart';
 import 'package:dartz/dartz.dart';
 import 'package:get_storage/src/storage_impl.dart';
 import 'package:injectable/injectable.dart';
@@ -57,11 +58,11 @@ class MainPageRepoImp implements MainPageRepo{
   }
 
   @override
-  Future<Either<Failure, void>> addNoteToCalendar({
+  Future<Either<Failure, Event>> addNoteToCalendar({
     required String noteTitle,
     required String noteContent}) async{
     try{
-      final result = dataSource.addNoteToCalendar(noteTitle: noteTitle, noteContent: noteContent);
+      final result = await dataSource.addNoteToCalendar(noteTitle: noteTitle, noteContent: noteContent);
       return Right(result);
     }catch(error){
       return const Left(AddNoteToCalendarFailure(failureMessage: 'Unable to add note to calendar'));

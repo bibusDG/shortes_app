@@ -25,7 +25,7 @@ abstract class MainPageDataSource{
     required int index,
   });
 
-  Future<void> addNoteToCalendar({
+  Future<Event> addNoteToCalendar({
     required String noteTitle,
     required String noteContent,
   });
@@ -69,7 +69,7 @@ class MainPageDataSourceImp implements MainPageDataSource{
   }
 
   @override
-  Future<void> addNoteToCalendar({required String noteTitle, required String noteContent}) async{
+  Future<Event> addNoteToCalendar({required String noteTitle, required String noteContent}) async{
     final Event event = Event(
       title: noteTitle,
       description: noteContent,
@@ -84,6 +84,7 @@ class MainPageDataSourceImp implements MainPageDataSource{
         emailInvites: [], // on Android, you can add invite emails to your event.
       ),
     );
-    await Add2Calendar.addEvent2Cal(event);
+    return event;
+    // await Add2Calendar.addEvent2Cal(event);
   }
 }

@@ -13,6 +13,11 @@
     <key>CFBundleLocalizations</key>
     <array>
     	<string>en-US</string>
+    	<string>pl-PL</string>
+    	<string>de-DE</string>
+    	<string>fr-FR</string>
+    	<string>es-ES</string>
+    	<string>it-IT</string>
     </array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
