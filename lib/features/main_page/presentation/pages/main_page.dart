@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,8 @@ class MainPage extends HookWidget {
     final _lastWords = useState('');
     final _speechEnabled = useState(false);
     final String localLanguage = Platform.localeName;
+    // final random = Random();
+    // print(random.nextInt(99999999));
     print(localLanguage);
 
     final textNoteTitle = useTextEditingController();
@@ -151,20 +154,20 @@ class MainPage extends HookWidget {
                         // An action can be bigger than the others.
                         flex: 1,
                         onPressed: null,
-                        backgroundColor: Color(0xFF7BC043),
+                        backgroundColor: Colors.blue,
                         foregroundColor: Colors.white,
                         child: Icon(Icons.calendar_month, size: 40,),
 
                         // label: 'Add to calendar',
                       ),
-                      const CustomSlidableAction(
-                        flex: 1,
-                        onPressed: null,
-                        backgroundColor: Color(0xFF0392CF),
-                        foregroundColor: Colors.white,
-                        child: Icon(Icons.notification_add, size: 40,),
-                        // label: 'Add notification',
-                      ),
+                      // const CustomSlidableAction(
+                      //   flex: 1,
+                      //   onPressed: null,
+                      //   backgroundColor: Color(0xFF0392CF),
+                      //   foregroundColor: Colors.white,
+                      //   child: Icon(Icons.notification_add, size: 40,),
+                      //   // label: 'Add notification',
+                      // ),
                       CustomSlidableAction(
                         // An action can be bigger than the others.
                         flex: 1,
