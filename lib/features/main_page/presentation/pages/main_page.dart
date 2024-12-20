@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -19,6 +21,8 @@ class MainPage extends HookWidget {
     final SpeechToText _speechToText = SpeechToText();
     final _lastWords = useState('');
     final _speechEnabled = useState(false);
+    final String localLanguage = Platform.localeName;
+    print(localLanguage);
 
     final textNoteTitle = useTextEditingController();
     final textNoteContent = useTextEditingController();
@@ -86,6 +90,7 @@ class MainPage extends HookWidget {
                   lastWords: _lastWords,
                   mainPageCubit: _mainPageCubit,
                   getStorage: userData,
+                  localLanguage: localLanguage,
               );
               // SpeechFunctions(
               //   voiceTextController: voiceTextController,
@@ -189,7 +194,9 @@ class MainPage extends HookWidget {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(userNote.noteName, style: TextStyle(fontSize: 30),),
+                                      SizedBox(
+                                          width: 250,
+                                          child: Text(userNote.noteName, style: TextStyle(fontSize: 50, fontFamily: 'Amatic', fontWeight: FontWeight.w100),overflow: TextOverflow.ellipsis,)),
                                       Column(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
@@ -197,9 +204,9 @@ class MainPage extends HookWidget {
                                           Row(
                                             children: [
                                               Icon(Icons.circle,
-                                                color: userNote.haveReminder == false? Colors.blue : Colors.transparent,),
+                                                color: userNote.haveReminder == true? Colors.blue : Colors.transparent,),
                                               Icon(Icons.circle,
-                                                color: userNote.movedToCalendar == false? Colors.green : Colors.transparent,
+                                                color: userNote.movedToCalendar == true? Colors.green : Colors.transparent,
                                               ),
                                             ],
                                           ),
@@ -213,7 +220,8 @@ class MainPage extends HookWidget {
                             height: 200,
                               child: Center(child: Padding(
                                 padding: const EdgeInsets.only(left: 10, right: 10),
-                                child: Text(userNote.noteContent, textAlign: TextAlign.justify,),
+                                child: SingleChildScrollView(
+                                    child: Text(userNote.noteContent, textAlign: TextAlign.justify, style: TextStyle(fontFamily: 'Amatic', fontSize: 25, fontWeight: FontWeight.bold),)),
                               )))
                         ]),
                     ),
@@ -248,7 +256,7 @@ class MainPage extends HookWidget {
           FocusScope.of(context).unfocus();
         },
         child: AlertDialog(
-          title: const Center(child: Text('Create Shorte'),),
+          title: const Center(child: Text('Create Shorte', style: TextStyle(fontFamily: 'Amatic', fontSize: 40, fontWeight: FontWeight.bold)),),
           content: SingleChildScrollView(
             child: SizedBox(
               height: 350,
@@ -256,7 +264,8 @@ class MainPage extends HookWidget {
               child: Column(
                 children: [
                   TextField(
-                  controller: titleController,
+                    style: TextStyle(fontFamily: 'Amatic', fontSize: 20, fontWeight: FontWeight.bold),
+                    controller: titleController,
                   decoration: InputDecoration(
                     focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color:Colors.black, width: 3.5),
@@ -271,6 +280,7 @@ class MainPage extends HookWidget {
                   SizedBox(
                     height: 200,
                     child: TextField(
+                      style: TextStyle(fontFamily: 'Amatic', fontSize: 20, fontWeight: FontWeight.bold),
                       keyboardType: TextInputType.multiline,
                       minLines: 1,
                       maxLines: 10,
@@ -286,9 +296,7 @@ class MainPage extends HookWidget {
                         hintText: 'Content',
                       ),),
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -352,20 +360,23 @@ class MainPage extends HookWidget {
     required ValueNotifier speechEnabled,
     required MainPageCubit mainPageCubit,
     required GetStorage getStorage,
+    required String localLanguage,
 })async {
     await SpeechFunctions(
       voiceTextController: voiceTextController,
       speechEnabled: speechEnabled,
       speechToText: speechToText,
       lastWords: lastWords,
-    ).startListening();
+    ).startListening(localeLanguage: localLanguage);
     if(context.mounted){
       showDialog(context: context, builder: (BuildContext context){
         return ValueListenableBuilder(
           valueListenable: lastWords,
           builder: (context, value, child){
             return AlertDialog(
-              title: const Center(child: Text('Create Shorte'),),
+              title: const Center(child: Text('Create Shorte',
+                style: TextStyle(fontFamily: 'Amatic', fontSize: 30, fontWeight: FontWeight.bold),
+              ),),
               content: SizedBox(
                 height: 350,
                 width: 300,
@@ -380,26 +391,13 @@ class MainPage extends HookWidget {
                         padding: const EdgeInsets.only(left: 10, right: 10),
                         child: SingleChildScrollView(
                           reverse: true,
-                          child: Text(value, textAlign: TextAlign.justify,),
+                          child: Text(value, textAlign: TextAlign.justify,style: TextStyle(fontFamily: 'Amatic', fontSize: 25, fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
-                    // TextField(
-                    //   keyboardType: TextInputType.multiline,
-                    //   minLines: 2,
-                    //   maxLines: 2,
-                    //   controller: voiceTextController,
-                    //   decoration: InputDecoration(
-                    //     focusedBorder: const OutlineInputBorder(
-                    //       borderSide: BorderSide(color:Colors.black, width: 3.5),
-                    //     ),
-                    //     enabledBorder: const OutlineInputBorder(
-                    //       borderSide: BorderSide(color:Colors.black, width: 1.5),
-                    //     ),
-                    //     border: const OutlineInputBorder(),
-                    //   ),),
                     IconButton(onPressed: () async{
-                      if(voiceTextController.text.trim().isEmpty){
+                      if(lastWords.value.trim().isEmpty){
                         if(context.mounted){
                           context.pop();
                         }
@@ -409,8 +407,8 @@ class MainPage extends HookWidget {
                         }
                         await mainPageCubit.addNewNote(
                             getStorage: getStorage,
-                            noteTitle: voiceTextController.text.trim().split(' ').take(2).join(' '),
-                            noteContent: voiceTextController.text.trim());
+                            noteTitle: lastWords.value.trim().split(' ').take(2).join(' '),
+                            noteContent: lastWords.value.trim());
                       }
                       await SpeechFunctions(
                           speechToText: speechToText,
@@ -419,12 +417,20 @@ class MainPage extends HookWidget {
                           voiceTextController: voiceTextController
                       ).stopListening();
                     }, icon: Icon(Icons.stop_circle, size: 60, color: Colors.red,)),
+
                   ],
                 ),
               ),
             );
           },
         );
+      }).then((value) {
+        SpeechFunctions(
+          voiceTextController: voiceTextController,
+          speechEnabled: speechEnabled,
+          speechToText: speechToText,
+          lastWords: lastWords,
+        ).stopListening();
       });
     }
   }
@@ -448,17 +454,21 @@ class SpeechFunctions {
     // print(speechEnabled.value);
   }
 
-  Future<void> startListening() async{
-    await speechToText.listen(onResult: _onSpeechResult);
+  Future<void> startListening({required String localeLanguage}) async{
+    lastWords.value = '';
+    await speechToText.listen(
+        localeId: localeLanguage,
+        onResult: _onSpeechResult);
   }
 
   void _onSpeechResult(SpeechRecognitionResult result) {
     lastWords.value = result.recognizedWords;
-    voiceTextController.text = result.recognizedWords;
+    // voiceTextController.text = result.recognizedWords;
   }
 
   Future<void> stopListening() async{
     print('stopped');
+    lastWords.value = '';
     await speechToText.stop();
   }
 
