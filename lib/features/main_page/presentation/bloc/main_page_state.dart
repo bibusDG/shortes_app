@@ -11,4 +11,7 @@ class MainPageState with _$MainPageState {
   const factory MainPageState.removingNote() = _RemovingNote;
   const factory MainPageState.noteRemovedSuccess() = _NoteRemovedSuccess;
   const factory MainPageState.noteRemovedFailure() = _NoteRemovedFailure;
+  const factory MainPageState.addingToCalendar() = _AddingToCalendar;
+  const factory MainPageState.addToCalendarFailure() = _AddToCalendarFailure;
+  const factory MainPageState.addToCalendarSuccess() = _AddToCalendarSuccess;
 }

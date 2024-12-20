@@ -2,10 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NSCalendarsUsageDescription</key>
+    <string>If you want to combine notes with calendar we need access to you calendar.</string>
+    <key>NSContactsUsageDescription</key>
+    <string>If you want to combine notes with calendar we need access to you calendar.</string>
     <key>NSSpeechRecognitionUsageDescription</key>
-    <string>Speech recognition needed</string>
+    <string>For spoken notes, this app need access to language recognition.</string>
     <key>NSMicrophoneUsageDescription</key>
-    <string>Need access for mic</string>
+    <string>For spoken notes, this app need access to your mic to translate speech to text.</string>
     <key>CFBundleLocalizations</key>
     <array>
     	<string>en-US</string>

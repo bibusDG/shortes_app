@@ -27,6 +27,9 @@ mixin _$MainPageState {
     required TResult Function() removingNote,
     required TResult Function() noteRemovedSuccess,
     required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +43,9 @@ mixin _$MainPageState {
     TResult? Function()? removingNote,
     TResult? Function()? noteRemovedSuccess,
     TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +59,9 @@ mixin _$MainPageState {
     TResult Function()? removingNote,
     TResult Function()? noteRemovedSuccess,
     TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,6 +76,9 @@ mixin _$MainPageState {
     required TResult Function(_RemovingNote value) removingNote,
     required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
     required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,6 +92,9 @@ mixin _$MainPageState {
     TResult? Function(_RemovingNote value)? removingNote,
     TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,6 +108,9 @@ mixin _$MainPageState {
     TResult Function(_RemovingNote value)? removingNote,
     TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -169,6 +187,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function() removingNote,
     required TResult Function() noteRemovedSuccess,
     required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
   }) {
     return initial();
   }
@@ -185,6 +206,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? removingNote,
     TResult? Function()? noteRemovedSuccess,
     TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
   }) {
     return initial?.call();
   }
@@ -201,6 +225,9 @@ class _$InitialImpl implements _Initial {
     TResult Function()? removingNote,
     TResult Function()? noteRemovedSuccess,
     TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -221,6 +248,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_RemovingNote value) removingNote,
     required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
     required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
   }) {
     return initial(this);
   }
@@ -237,6 +267,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_RemovingNote value)? removingNote,
     TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
   }) {
     return initial?.call(this);
   }
@@ -253,6 +286,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(_RemovingNote value)? removingNote,
     TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -343,6 +379,9 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     required TResult Function() removingNote,
     required TResult Function() noteRemovedSuccess,
     required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
   }) {
     return lackOfNotes(message);
   }
@@ -359,6 +398,9 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult? Function()? removingNote,
     TResult? Function()? noteRemovedSuccess,
     TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
   }) {
     return lackOfNotes?.call(message);
   }
@@ -375,6 +417,9 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult Function()? removingNote,
     TResult Function()? noteRemovedSuccess,
     TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (lackOfNotes != null) {
@@ -395,6 +440,9 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     required TResult Function(_RemovingNote value) removingNote,
     required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
     required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
   }) {
     return lackOfNotes(this);
   }
@@ -411,6 +459,9 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult? Function(_RemovingNote value)? removingNote,
     TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
   }) {
     return lackOfNotes?.call(this);
   }
@@ -427,6 +478,9 @@ class _$LackOfNotesImpl implements _LackOfNotes {
     TResult Function(_RemovingNote value)? removingNote,
     TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (lackOfNotes != null) {
@@ -534,6 +588,9 @@ class _$NotesImpl implements _Notes {
     required TResult Function() removingNote,
     required TResult Function() noteRemovedSuccess,
     required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
   }) {
     return notes(userNotes);
   }
@@ -550,6 +607,9 @@ class _$NotesImpl implements _Notes {
     TResult? Function()? removingNote,
     TResult? Function()? noteRemovedSuccess,
     TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
   }) {
     return notes?.call(userNotes);
   }
@@ -566,6 +626,9 @@ class _$NotesImpl implements _Notes {
     TResult Function()? removingNote,
     TResult Function()? noteRemovedSuccess,
     TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (notes != null) {
@@ -586,6 +649,9 @@ class _$NotesImpl implements _Notes {
     required TResult Function(_RemovingNote value) removingNote,
     required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
     required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
   }) {
     return notes(this);
   }
@@ -602,6 +668,9 @@ class _$NotesImpl implements _Notes {
     TResult? Function(_RemovingNote value)? removingNote,
     TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
   }) {
     return notes?.call(this);
   }
@@ -618,6 +687,9 @@ class _$NotesImpl implements _Notes {
     TResult Function(_RemovingNote value)? removingNote,
     TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (notes != null) {
@@ -689,6 +761,9 @@ class _$CreatingNoteImpl implements _CreatingNote {
     required TResult Function() removingNote,
     required TResult Function() noteRemovedSuccess,
     required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
   }) {
     return creatingNote();
   }
@@ -705,6 +780,9 @@ class _$CreatingNoteImpl implements _CreatingNote {
     TResult? Function()? removingNote,
     TResult? Function()? noteRemovedSuccess,
     TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
   }) {
     return creatingNote?.call();
   }
@@ -721,6 +799,9 @@ class _$CreatingNoteImpl implements _CreatingNote {
     TResult Function()? removingNote,
     TResult Function()? noteRemovedSuccess,
     TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (creatingNote != null) {
@@ -741,6 +822,9 @@ class _$CreatingNoteImpl implements _CreatingNote {
     required TResult Function(_RemovingNote value) removingNote,
     required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
     required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
   }) {
     return creatingNote(this);
   }
@@ -757,6 +841,9 @@ class _$CreatingNoteImpl implements _CreatingNote {
     TResult? Function(_RemovingNote value)? removingNote,
     TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
   }) {
     return creatingNote?.call(this);
   }
@@ -773,6 +860,9 @@ class _$CreatingNoteImpl implements _CreatingNote {
     TResult Function(_RemovingNote value)? removingNote,
     TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (creatingNote != null) {
@@ -837,6 +927,9 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     required TResult Function() removingNote,
     required TResult Function() noteRemovedSuccess,
     required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
   }) {
     return creatingNoteSuccess();
   }
@@ -853,6 +946,9 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     TResult? Function()? removingNote,
     TResult? Function()? noteRemovedSuccess,
     TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
   }) {
     return creatingNoteSuccess?.call();
   }
@@ -869,6 +965,9 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     TResult Function()? removingNote,
     TResult Function()? noteRemovedSuccess,
     TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (creatingNoteSuccess != null) {
@@ -889,6 +988,9 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     required TResult Function(_RemovingNote value) removingNote,
     required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
     required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
   }) {
     return creatingNoteSuccess(this);
   }
@@ -905,6 +1007,9 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     TResult? Function(_RemovingNote value)? removingNote,
     TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
   }) {
     return creatingNoteSuccess?.call(this);
   }
@@ -921,6 +1026,9 @@ class _$CreatingNoteSuccessImpl implements _CreatingNoteSuccess {
     TResult Function(_RemovingNote value)? removingNote,
     TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (creatingNoteSuccess != null) {
@@ -985,6 +1093,9 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     required TResult Function() removingNote,
     required TResult Function() noteRemovedSuccess,
     required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
   }) {
     return creatingNoteFailure();
   }
@@ -1001,6 +1112,9 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     TResult? Function()? removingNote,
     TResult? Function()? noteRemovedSuccess,
     TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
   }) {
     return creatingNoteFailure?.call();
   }
@@ -1017,6 +1131,9 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     TResult Function()? removingNote,
     TResult Function()? noteRemovedSuccess,
     TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (creatingNoteFailure != null) {
@@ -1037,6 +1154,9 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     required TResult Function(_RemovingNote value) removingNote,
     required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
     required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
   }) {
     return creatingNoteFailure(this);
   }
@@ -1053,6 +1173,9 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     TResult? Function(_RemovingNote value)? removingNote,
     TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
   }) {
     return creatingNoteFailure?.call(this);
   }
@@ -1069,6 +1192,9 @@ class _$CreatingNoteFailureImpl implements _CreatingNoteFailure {
     TResult Function(_RemovingNote value)? removingNote,
     TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (creatingNoteFailure != null) {
@@ -1132,6 +1258,9 @@ class _$RemovingNoteImpl implements _RemovingNote {
     required TResult Function() removingNote,
     required TResult Function() noteRemovedSuccess,
     required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
   }) {
     return removingNote();
   }
@@ -1148,6 +1277,9 @@ class _$RemovingNoteImpl implements _RemovingNote {
     TResult? Function()? removingNote,
     TResult? Function()? noteRemovedSuccess,
     TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
   }) {
     return removingNote?.call();
   }
@@ -1164,6 +1296,9 @@ class _$RemovingNoteImpl implements _RemovingNote {
     TResult Function()? removingNote,
     TResult Function()? noteRemovedSuccess,
     TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (removingNote != null) {
@@ -1184,6 +1319,9 @@ class _$RemovingNoteImpl implements _RemovingNote {
     required TResult Function(_RemovingNote value) removingNote,
     required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
     required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
   }) {
     return removingNote(this);
   }
@@ -1200,6 +1338,9 @@ class _$RemovingNoteImpl implements _RemovingNote {
     TResult? Function(_RemovingNote value)? removingNote,
     TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
   }) {
     return removingNote?.call(this);
   }
@@ -1216,6 +1357,9 @@ class _$RemovingNoteImpl implements _RemovingNote {
     TResult Function(_RemovingNote value)? removingNote,
     TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (removingNote != null) {
@@ -1279,6 +1423,9 @@ class _$NoteRemovedSuccessImpl implements _NoteRemovedSuccess {
     required TResult Function() removingNote,
     required TResult Function() noteRemovedSuccess,
     required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
   }) {
     return noteRemovedSuccess();
   }
@@ -1295,6 +1442,9 @@ class _$NoteRemovedSuccessImpl implements _NoteRemovedSuccess {
     TResult? Function()? removingNote,
     TResult? Function()? noteRemovedSuccess,
     TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
   }) {
     return noteRemovedSuccess?.call();
   }
@@ -1311,6 +1461,9 @@ class _$NoteRemovedSuccessImpl implements _NoteRemovedSuccess {
     TResult Function()? removingNote,
     TResult Function()? noteRemovedSuccess,
     TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (noteRemovedSuccess != null) {
@@ -1331,6 +1484,9 @@ class _$NoteRemovedSuccessImpl implements _NoteRemovedSuccess {
     required TResult Function(_RemovingNote value) removingNote,
     required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
     required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
   }) {
     return noteRemovedSuccess(this);
   }
@@ -1347,6 +1503,9 @@ class _$NoteRemovedSuccessImpl implements _NoteRemovedSuccess {
     TResult? Function(_RemovingNote value)? removingNote,
     TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
   }) {
     return noteRemovedSuccess?.call(this);
   }
@@ -1363,6 +1522,9 @@ class _$NoteRemovedSuccessImpl implements _NoteRemovedSuccess {
     TResult Function(_RemovingNote value)? removingNote,
     TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (noteRemovedSuccess != null) {
@@ -1426,6 +1588,9 @@ class _$NoteRemovedFailureImpl implements _NoteRemovedFailure {
     required TResult Function() removingNote,
     required TResult Function() noteRemovedSuccess,
     required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
   }) {
     return noteRemovedFailure();
   }
@@ -1442,6 +1607,9 @@ class _$NoteRemovedFailureImpl implements _NoteRemovedFailure {
     TResult? Function()? removingNote,
     TResult? Function()? noteRemovedSuccess,
     TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
   }) {
     return noteRemovedFailure?.call();
   }
@@ -1458,6 +1626,9 @@ class _$NoteRemovedFailureImpl implements _NoteRemovedFailure {
     TResult Function()? removingNote,
     TResult Function()? noteRemovedSuccess,
     TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (noteRemovedFailure != null) {
@@ -1478,6 +1649,9 @@ class _$NoteRemovedFailureImpl implements _NoteRemovedFailure {
     required TResult Function(_RemovingNote value) removingNote,
     required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
     required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
   }) {
     return noteRemovedFailure(this);
   }
@@ -1494,6 +1668,9 @@ class _$NoteRemovedFailureImpl implements _NoteRemovedFailure {
     TResult? Function(_RemovingNote value)? removingNote,
     TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
   }) {
     return noteRemovedFailure?.call(this);
   }
@@ -1510,6 +1687,9 @@ class _$NoteRemovedFailureImpl implements _NoteRemovedFailure {
     TResult Function(_RemovingNote value)? removingNote,
     TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
     TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
     required TResult orElse(),
   }) {
     if (noteRemovedFailure != null) {
@@ -1521,4 +1701,501 @@ class _$NoteRemovedFailureImpl implements _NoteRemovedFailure {
 
 abstract class _NoteRemovedFailure implements MainPageState {
   const factory _NoteRemovedFailure() = _$NoteRemovedFailureImpl;
+}
+
+/// @nodoc
+abstract class _$$AddingToCalendarImplCopyWith<$Res> {
+  factory _$$AddingToCalendarImplCopyWith(_$AddingToCalendarImpl value,
+          $Res Function(_$AddingToCalendarImpl) then) =
+      __$$AddingToCalendarImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddingToCalendarImplCopyWithImpl<$Res>
+    extends _$MainPageStateCopyWithImpl<$Res, _$AddingToCalendarImpl>
+    implements _$$AddingToCalendarImplCopyWith<$Res> {
+  __$$AddingToCalendarImplCopyWithImpl(_$AddingToCalendarImpl _value,
+      $Res Function(_$AddingToCalendarImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MainPageState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AddingToCalendarImpl implements _AddingToCalendar {
+  const _$AddingToCalendarImpl();
+
+  @override
+  String toString() {
+    return 'MainPageState.addingToCalendar()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AddingToCalendarImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) lackOfNotes,
+    required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
+  }) {
+    return addingToCalendar();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? lackOfNotes,
+    TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
+  }) {
+    return addingToCalendar?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? lackOfNotes,
+    TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
+    required TResult orElse(),
+  }) {
+    if (addingToCalendar != null) {
+      return addingToCalendar();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LackOfNotes value) lackOfNotes,
+    required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
+  }) {
+    return addingToCalendar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LackOfNotes value)? lackOfNotes,
+    TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
+  }) {
+    return addingToCalendar?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LackOfNotes value)? lackOfNotes,
+    TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
+    required TResult orElse(),
+  }) {
+    if (addingToCalendar != null) {
+      return addingToCalendar(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddingToCalendar implements MainPageState {
+  const factory _AddingToCalendar() = _$AddingToCalendarImpl;
+}
+
+/// @nodoc
+abstract class _$$AddToCalendarFailureImplCopyWith<$Res> {
+  factory _$$AddToCalendarFailureImplCopyWith(_$AddToCalendarFailureImpl value,
+          $Res Function(_$AddToCalendarFailureImpl) then) =
+      __$$AddToCalendarFailureImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddToCalendarFailureImplCopyWithImpl<$Res>
+    extends _$MainPageStateCopyWithImpl<$Res, _$AddToCalendarFailureImpl>
+    implements _$$AddToCalendarFailureImplCopyWith<$Res> {
+  __$$AddToCalendarFailureImplCopyWithImpl(_$AddToCalendarFailureImpl _value,
+      $Res Function(_$AddToCalendarFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MainPageState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AddToCalendarFailureImpl implements _AddToCalendarFailure {
+  const _$AddToCalendarFailureImpl();
+
+  @override
+  String toString() {
+    return 'MainPageState.addToCalendarFailure()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddToCalendarFailureImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) lackOfNotes,
+    required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
+  }) {
+    return addToCalendarFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? lackOfNotes,
+    TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
+  }) {
+    return addToCalendarFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? lackOfNotes,
+    TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
+    required TResult orElse(),
+  }) {
+    if (addToCalendarFailure != null) {
+      return addToCalendarFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LackOfNotes value) lackOfNotes,
+    required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
+  }) {
+    return addToCalendarFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LackOfNotes value)? lackOfNotes,
+    TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
+  }) {
+    return addToCalendarFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LackOfNotes value)? lackOfNotes,
+    TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
+    required TResult orElse(),
+  }) {
+    if (addToCalendarFailure != null) {
+      return addToCalendarFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddToCalendarFailure implements MainPageState {
+  const factory _AddToCalendarFailure() = _$AddToCalendarFailureImpl;
+}
+
+/// @nodoc
+abstract class _$$AddToCalendarSuccessImplCopyWith<$Res> {
+  factory _$$AddToCalendarSuccessImplCopyWith(_$AddToCalendarSuccessImpl value,
+          $Res Function(_$AddToCalendarSuccessImpl) then) =
+      __$$AddToCalendarSuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddToCalendarSuccessImplCopyWithImpl<$Res>
+    extends _$MainPageStateCopyWithImpl<$Res, _$AddToCalendarSuccessImpl>
+    implements _$$AddToCalendarSuccessImplCopyWith<$Res> {
+  __$$AddToCalendarSuccessImplCopyWithImpl(_$AddToCalendarSuccessImpl _value,
+      $Res Function(_$AddToCalendarSuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MainPageState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AddToCalendarSuccessImpl implements _AddToCalendarSuccess {
+  const _$AddToCalendarSuccessImpl();
+
+  @override
+  String toString() {
+    return 'MainPageState.addToCalendarSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddToCalendarSuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) lackOfNotes,
+    required TResult Function(List<dynamic> userNotes) notes,
+    required TResult Function() creatingNote,
+    required TResult Function() creatingNoteSuccess,
+    required TResult Function() creatingNoteFailure,
+    required TResult Function() removingNote,
+    required TResult Function() noteRemovedSuccess,
+    required TResult Function() noteRemovedFailure,
+    required TResult Function() addingToCalendar,
+    required TResult Function() addToCalendarFailure,
+    required TResult Function() addToCalendarSuccess,
+  }) {
+    return addToCalendarSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? lackOfNotes,
+    TResult? Function(List<dynamic> userNotes)? notes,
+    TResult? Function()? creatingNote,
+    TResult? Function()? creatingNoteSuccess,
+    TResult? Function()? creatingNoteFailure,
+    TResult? Function()? removingNote,
+    TResult? Function()? noteRemovedSuccess,
+    TResult? Function()? noteRemovedFailure,
+    TResult? Function()? addingToCalendar,
+    TResult? Function()? addToCalendarFailure,
+    TResult? Function()? addToCalendarSuccess,
+  }) {
+    return addToCalendarSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? lackOfNotes,
+    TResult Function(List<dynamic> userNotes)? notes,
+    TResult Function()? creatingNote,
+    TResult Function()? creatingNoteSuccess,
+    TResult Function()? creatingNoteFailure,
+    TResult Function()? removingNote,
+    TResult Function()? noteRemovedSuccess,
+    TResult Function()? noteRemovedFailure,
+    TResult Function()? addingToCalendar,
+    TResult Function()? addToCalendarFailure,
+    TResult Function()? addToCalendarSuccess,
+    required TResult orElse(),
+  }) {
+    if (addToCalendarSuccess != null) {
+      return addToCalendarSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LackOfNotes value) lackOfNotes,
+    required TResult Function(_Notes value) notes,
+    required TResult Function(_CreatingNote value) creatingNote,
+    required TResult Function(_CreatingNoteSuccess value) creatingNoteSuccess,
+    required TResult Function(_CreatingNoteFailure value) creatingNoteFailure,
+    required TResult Function(_RemovingNote value) removingNote,
+    required TResult Function(_NoteRemovedSuccess value) noteRemovedSuccess,
+    required TResult Function(_NoteRemovedFailure value) noteRemovedFailure,
+    required TResult Function(_AddingToCalendar value) addingToCalendar,
+    required TResult Function(_AddToCalendarFailure value) addToCalendarFailure,
+    required TResult Function(_AddToCalendarSuccess value) addToCalendarSuccess,
+  }) {
+    return addToCalendarSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LackOfNotes value)? lackOfNotes,
+    TResult? Function(_Notes value)? notes,
+    TResult? Function(_CreatingNote value)? creatingNote,
+    TResult? Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult? Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult? Function(_RemovingNote value)? removingNote,
+    TResult? Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult? Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult? Function(_AddingToCalendar value)? addingToCalendar,
+    TResult? Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult? Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
+  }) {
+    return addToCalendarSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LackOfNotes value)? lackOfNotes,
+    TResult Function(_Notes value)? notes,
+    TResult Function(_CreatingNote value)? creatingNote,
+    TResult Function(_CreatingNoteSuccess value)? creatingNoteSuccess,
+    TResult Function(_CreatingNoteFailure value)? creatingNoteFailure,
+    TResult Function(_RemovingNote value)? removingNote,
+    TResult Function(_NoteRemovedSuccess value)? noteRemovedSuccess,
+    TResult Function(_NoteRemovedFailure value)? noteRemovedFailure,
+    TResult Function(_AddingToCalendar value)? addingToCalendar,
+    TResult Function(_AddToCalendarFailure value)? addToCalendarFailure,
+    TResult Function(_AddToCalendarSuccess value)? addToCalendarSuccess,
+    required TResult orElse(),
+  }) {
+    if (addToCalendarSuccess != null) {
+      return addToCalendarSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddToCalendarSuccess implements MainPageState {
+  const factory _AddToCalendarSuccess() = _$AddToCalendarSuccessImpl;
 }

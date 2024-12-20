@@ -11,3 +11,7 @@ class AddNEwNoteFailure extends Failure{
 class DeleteNoteFailure extends Failure{
   const DeleteNoteFailure({required super.failureMessage});
 }
+
+class AddNoteToCalendarFailure extends Failure{
+  const AddNoteToCalendarFailure({required super.failureMessage});
+}

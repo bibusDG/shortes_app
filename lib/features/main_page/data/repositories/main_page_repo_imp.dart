@@ -55,4 +55,16 @@ class MainPageRepoImp implements MainPageRepo{
       return const Left(DeleteNoteFailure(failureMessage: 'Unable to delete note'));
     }
   }
+
+  @override
+  Future<Either<Failure, void>> addNoteToCalendar({
+    required String noteTitle,
+    required String noteContent}) async{
+    try{
+      final result = dataSource.addNoteToCalendar(noteTitle: noteTitle, noteContent: noteContent);
+      return Right(result);
+    }catch(error){
+      return const Left(AddNoteToCalendarFailure(failureMessage: 'Unable to add note to calendar'));
+    }
+  }
 }

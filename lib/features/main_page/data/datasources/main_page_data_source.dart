@@ -1,3 +1,4 @@
+import 'package:add_2_calendar/add_2_calendar.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shortes/features/main_page/domain/entities/user_note.dart';
@@ -22,6 +23,11 @@ abstract class MainPageDataSource{
   Future<void> deleteNote({
     required GetStorage getStorage,
     required int index,
+  });
+
+  Future<void> addNoteToCalendar({
+    required String noteTitle,
+    required String noteContent,
   });
 
 }
@@ -60,5 +66,24 @@ class MainPageDataSourceImp implements MainPageDataSource{
     final List<dynamic> listOfNotes = await getStorage.read('listOfNotes');
     listOfNotes.removeAt(index);
     getStorage.write('listOfNotes', listOfNotes);
+  }
+
+  @override
+  Future<void> addNoteToCalendar({required String noteTitle, required String noteContent}) async{
+    final Event event = Event(
+      title: noteTitle,
+      description: noteContent,
+      location: 'Event location',
+      startDate: DateTime.now(),
+      endDate: DateTime.now(),
+      iosParams: IOSParams(
+        reminder: Duration(/* Ex. hours:1 */), // on iOS, you can set alarm notification after your event.
+        // url: 'https://www.example.com', // on iOS, you can set url to your event.
+      ),
+      androidParams: AndroidParams(
+        emailInvites: [], // on Android, you can add invite emails to your event.
+      ),
+    );
+    await Add2Calendar.addEvent2Cal(event);
   }
 }

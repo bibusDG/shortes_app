@@ -26,4 +26,9 @@ abstract class MainPageRepo{
     required int index,
 });
 
+  Future<Either<Failure, void>> addNoteToCalendar({
+    required String noteTitle,
+    required String noteContent,
+});
+
 }

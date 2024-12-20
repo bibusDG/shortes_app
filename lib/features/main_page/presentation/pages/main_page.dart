@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:add_2_calendar/add_2_calendar.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -65,6 +66,14 @@ class MainPage extends HookWidget {
         },
         noteRemovedSuccess: () async{
           await Future.delayed((Duration(seconds: 3)));
+          _mainPageCubit.initMainPage(getStorage: userData);
+        },
+        addToCalendarFailure: () async{
+          await Future.delayed((Duration(seconds: 3)));
+          _mainPageCubit.initMainPage(getStorage: userData);
+        },
+        addToCalendarSuccess: () async{
+          await Future.delayed((Duration(seconds: 5)));
           _mainPageCubit.initMainPage(getStorage: userData);
         }
       );
@@ -149,11 +158,17 @@ class MainPage extends HookWidget {
                   endActionPane: ActionPane(
                     motion: const StretchMotion(),
                     children: [
-                      const CustomSlidableAction(
+                      CustomSlidableAction(
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
                         // An action can be bigger than the others.
                         flex: 1,
-                        onPressed: null,
+                        onPressed: (context) async{
+                         await _mainPageCubit.addNoteToCalendar(
+                              getStorage: userData,
+                              index: index,
+                              noteTitle: 'Shorty note : ${userNote.noteName}',
+                              noteContent: userNote.noteContent);
+                        },
                         backgroundColor: Colors.blue,
                         foregroundColor: Colors.white,
                         child: Icon(Icons.calendar_month, size: 40,),
@@ -240,6 +255,9 @@ class MainPage extends HookWidget {
         noteRemovedFailure: () => Center(child: Text('Note remove failure'),),
         noteRemovedSuccess: () => Center(child: Text('Note removed'),),
         removingNote: () => Center(child: CircularProgressIndicator()),
+        addingToCalendar: () => Center(child: CircularProgressIndicator(),),
+        addToCalendarSuccess: () => Center(child: Text('Note added to calendar'),),
+        addToCalendarFailure: () => Center(child: Text('Unable to add note to calendar'),)
       ),
     );
   }
