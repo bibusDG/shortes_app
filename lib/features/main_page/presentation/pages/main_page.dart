@@ -26,7 +26,7 @@ class MainPage extends HookWidget {
     final String localLanguage = Platform.localeName;
     // final random = Random();
     // print(random.nextInt(99999999));
-    print(localLanguage);
+    // print(localLanguage);
 
     final textNoteTitle = useTextEditingController();
     final textNoteContent = useTextEditingController();
@@ -57,7 +57,7 @@ class MainPage extends HookWidget {
           _mainPageCubit.initMainPage(getStorage: userData);
         },
         creatingNoteSuccess: () async{
-          await Future.delayed((Duration(seconds: 3)));
+          await Future.delayed((Duration(milliseconds: 1500)));
           _mainPageCubit.initMainPage(getStorage: userData);
         },
         noteRemovedFailure: () async{
@@ -65,7 +65,7 @@ class MainPage extends HookWidget {
           _mainPageCubit.initMainPage(getStorage: userData);
         },
         noteRemovedSuccess: () async{
-          await Future.delayed((Duration(seconds: 3)));
+          await Future.delayed((Duration(milliseconds: 1500)));
           _mainPageCubit.initMainPage(getStorage: userData);
         },
         addToCalendarFailure: () async{
@@ -207,7 +207,7 @@ class MainPage extends HookWidget {
                                     children: [
                                       SizedBox(
                                           width: 250,
-                                          child: Text(userNote.noteName, style: TextStyle(fontSize: 50, fontFamily: 'Amatic', fontWeight: FontWeight.w100),overflow: TextOverflow.ellipsis,)),
+                                          child: Text(userNote.noteName, style: TextStyle(fontSize: 40, fontFamily: 'Roboto', fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,)),
                                       Column(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
@@ -230,9 +230,9 @@ class MainPage extends HookWidget {
                           SizedBox(
                             height: 200,
                               child: Center(child: Padding(
-                                padding: const EdgeInsets.only(left: 10, right: 10),
+                                padding: const EdgeInsets.only(left: 15, right: 15, bottom: 25),
                                 child: SingleChildScrollView(
-                                    child: Text(userNote.noteContent, textAlign: TextAlign.justify, style: TextStyle(fontFamily: 'Amatic', fontSize: 25, fontWeight: FontWeight.bold),)),
+                                    child: Text(userNote.noteContent, textAlign: TextAlign.justify, style: TextStyle(fontFamily: 'Roboto', fontSize: 20, fontWeight: FontWeight.w100),)),
                               )))
                         ]),
                     ),
@@ -243,10 +243,10 @@ class MainPage extends HookWidget {
           });
         },
         creatingNote: () => Center(child: CircularProgressIndicator(),),
-        creatingNoteFailure: () => Center(child: Text('Not possible to create new note.'),),
-        creatingNoteSuccess: () => Center(child: Text('New note created'),),
-        noteRemovedFailure: () => Center(child: Text('Note remove failure'),),
-        noteRemovedSuccess: () => Center(child: Text('Note removed'),),
+        creatingNoteFailure: () => Center(child: Icon(Icons.close,size: 90, color: Colors.red,),),
+        creatingNoteSuccess: () => Center(child: Icon(Icons.check,size: 90, color: Colors.green,) ),
+        noteRemovedFailure: () => Center(child: Icon(Icons.close,size: 90, color: Colors.red,),),
+        noteRemovedSuccess: () => Center(child: Icon(Icons.check,size: 90, color: Colors.green,),),
         removingNote: () => Center(child: CircularProgressIndicator()),
         addingToCalendar: () => Center(child: CircularProgressIndicator(),),
         addToCalendarSuccess: () => Center(child: Text('Note added to calendar'),),
@@ -270,7 +270,7 @@ class MainPage extends HookWidget {
           FocusScope.of(context).unfocus();
         },
         child: AlertDialog(
-          title: const Center(child: Text('Create Shorte', style: TextStyle(fontFamily: 'Amatic', fontSize: 40, fontWeight: FontWeight.bold)),),
+          title: Center(child: Image.asset('assets/images/shortes.png', scale: 2.0,)),
           content: SingleChildScrollView(
             child: SizedBox(
               height: 350,
@@ -278,7 +278,7 @@ class MainPage extends HookWidget {
               child: Column(
                 children: [
                   TextField(
-                    style: TextStyle(fontFamily: 'Amatic', fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontFamily: 'Roboto', fontSize: 18, fontWeight: FontWeight.bold),
                     controller: titleController,
                   decoration: InputDecoration(
                     focusedBorder: const OutlineInputBorder(
@@ -288,13 +288,13 @@ class MainPage extends HookWidget {
                       borderSide: BorderSide(color:Colors.black, width: 1.5),
                     ),
                     border: const OutlineInputBorder(),
-                    hintText: 'Note name',
+                    hintText: 'Title',
                   ),),
                   const SizedBox(height: 20,),
                   SizedBox(
-                    height: 200,
+                    height: 180,
                     child: TextField(
-                      style: TextStyle(fontFamily: 'Amatic', fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontFamily: 'Roboto', fontSize: 18, fontWeight: FontWeight.bold),
                       keyboardType: TextInputType.multiline,
                       minLines: 1,
                       maxLines: 10,
@@ -346,14 +346,14 @@ class MainPage extends HookWidget {
                           }
 
                         },
-                        icon: Icon(Icons.check_circle, size: 45, color: Colors.green,),),
+                        icon: Icon(Icons.check_circle, size: 60, color: Colors.green,),),
                       IconButton(
                         onPressed: (){
                           context.pop();
                           contentController.clear();
                           titleController.clear();
                         },
-                        icon: Icon(Icons.cancel, size: 45, color: Colors.red,))
+                        icon: Icon(Icons.cancel, size: 60, color: Colors.red,))
                     ]
 
                   ),
@@ -388,9 +388,8 @@ class MainPage extends HookWidget {
           valueListenable: lastWords,
           builder: (context, value, child){
             return AlertDialog(
-              title: const Center(child: Text('Create Shorte',
-                style: TextStyle(fontFamily: 'Amatic', fontSize: 30, fontWeight: FontWeight.bold),
-              ),),
+              title: Center(child: Image.asset('assets/images/shortes.png', scale: 2.0,),
+              ),
               content: SizedBox(
                 height: 350,
                 width: 300,
@@ -405,7 +404,7 @@ class MainPage extends HookWidget {
                         padding: const EdgeInsets.only(left: 10, right: 10),
                         child: SingleChildScrollView(
                           reverse: true,
-                          child: Text(value, textAlign: TextAlign.justify,style: TextStyle(fontFamily: 'Amatic', fontSize: 25, fontWeight: FontWeight.bold),
+                          child: Text(value, textAlign: TextAlign.justify,style: TextStyle(fontFamily: 'Roboto', fontSize: 18, fontWeight: FontWeight.w100),
                           ),
                         ),
                       ),
@@ -430,7 +429,7 @@ class MainPage extends HookWidget {
                           lastWords: lastWords,
                           voiceTextController: voiceTextController
                       ).stopListening();
-                    }, icon: Icon(Icons.stop_circle, size: 60, color: Colors.red,)),
+                    }, icon: Icon(Icons.stop_circle, size: 80, color: Colors.red,)),
 
                   ],
                 ),
