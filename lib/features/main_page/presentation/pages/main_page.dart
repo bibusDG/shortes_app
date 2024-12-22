@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:add_2_calendar/add_2_calendar.dart';
+import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -115,7 +116,10 @@ class MainPage extends HookWidget {
               ).initSpeech();
             }
           },
-          child: Icon(Icons.add_circle, size: 100,)),
+          child: AvatarGlow(
+            glowCount: 1,
+            glowRadiusFactor: 0.4,
+              child: Icon(Icons.add_circle, size: 100,))),
       appBar: _mainPageState.whenOrNull(
         lackOfNotes: null,
         notes:(userNotes) => AppBar(
@@ -134,7 +138,26 @@ class MainPage extends HookWidget {
             Image.asset('assets/images/shortes_big.png', scale: 1.8,),
             SizedBox(
               width: 250,
-                child: Text(message, textAlign: TextAlign.center,)),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.add_circle, size: 30,),
+                        Text( ' = \u{270D}', style: TextStyle(fontSize: 40),),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.add_circle, size: 30,),
+                        Icon(Icons.timelapse, size: 30,),
+                        Text(' = \u{1F3A4}', style: TextStyle(fontSize: 40),),
+                      ],
+                    ),
+                    // Text(message, textAlign: TextAlign.center,),
+                  ],
+                )),
           ],
         ),),
         notes: (userNotes) {
@@ -429,7 +452,10 @@ class MainPage extends HookWidget {
                           lastWords: lastWords,
                           voiceTextController: voiceTextController
                       ).stopListening();
-                    }, icon: Icon(Icons.stop_circle, size: 80, color: Colors.red,)),
+                    }, icon: AvatarGlow(
+                      glowCount: 1,
+                        glowRadiusFactor: 0.4,
+                        child: Icon(Icons.mic_off_rounded, size: 70, color: Colors.red,))),
 
                   ],
                 ),
